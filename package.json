@@ -1,0 +1,68 @@
+{
+  "name": "@dephub/eslint-react",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Opinionated modern ESLint configuration for React projects.",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublishOnly": "pnpm clean && pnpm check-types && pnpm build && pnpm lint",
+    "release": "pnpm publish",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint . --fix --max-warnings 0",
+    "clean": "rm -rf dist",
+    "build": "vite build",
+    "dev": "vite build -w"
+  },
+  "keywords": [
+    "eslint-react",
+    "lint",
+    "eslint",
+    "eslint-config",
+    "react",
+    "typescript",
+    "ts",
+    "config",
+    "preset",
+    "linter",
+    "code-quality"
+  ],
+  "author": {
+    "name": "Estarlin R",
+    "email": "dev@estarlincito.com",
+    "url": "https://estarlincito.com"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dephub-js/eslint-react#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dephub-js/eslint-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dephub-js/eslint-react/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "dependencies": {
+    "@dephub/eslint-ts": "^1.0.1",
+    "@types/eslint": "^9.6.1",
+    "eslint": "^10.0.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1"
+  },
+  "devDependencies": {
+    "@dephub/glob": "^1.0.1",
+    "@dephub/path": "^1.0.1",
+    "@types/node": "^25.3.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
