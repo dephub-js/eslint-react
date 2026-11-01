@@ -1,15 +1,16 @@
 {
   "name": "@dephub/eslint-react",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Opinionated modern ESLint configuration for React projects.",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "scripts": {
-    "prepublishOnly": "pnpm clean && pnpm check-types && pnpm build && pnpm lint",
+    "prepublishOnly": "pnpm clean && pnpm check && pnpm build && pnpm lint",
     "release": "pnpm publish",
     "docs": "lineo md 'src/**/*.ts' --outFile code.md --outDir temp",
-    "check-types": "tsc --noEmit",
+    "check": "tsc --noEmit",
+    "test": "tsx --test src",
     "lint": "eslint . --fix --max-warnings 0",
     "fmt": "prettier --write .",
     "clean": "rm -rf dist",
@@ -53,19 +54,20 @@
   },
   "packageManager": "pnpm@10.30.3",
   "dependencies": {
-    "@dephub/eslint-ts": "^1.0.1",
+    "@dephub/eslint-ts": "^1.0.5",
     "@types/eslint": "^9.6.1",
-    "eslint": "^10.0.2",
+    "eslint": "^10.14.0",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1"
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "tsx": "^4.23.15"
   },
   "devDependencies": {
-    "@dephub/glob": "^1.0.1",
-    "@dephub/path": "^1.0.1",
-    "@types/node": "^25.3.2",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.1",
-    "prettier": "^3.8.1",
-    "vite-plugin-dts": "^4.5.4"
+    "@dephub/glob": "^1.0.2",
+    "@dephub/path": "^1.0.2",
+    "@types/node": "^26.6.6",
+    "prettier": "^3.9.10",
+    "typescript": "6.0.3",
+    "vite": "^8.3.5",
+    "vite-plugin-dts": "^5.1.2"
   }
 }
